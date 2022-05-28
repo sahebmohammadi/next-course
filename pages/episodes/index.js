@@ -29,9 +29,7 @@ export async function getStaticProps() {
   const { data } = await axios.get("https://rickandmortyapi.com/api/episode");
   return {
     props: {
-      episodeList: data.results,
+      episodeList: data.results.slice(0, 3),
     },
   };
 }
-
-
