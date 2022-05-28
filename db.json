@@ -18,5 +18,43 @@
       "price": 3000,
       "description": "description 3"
     }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "title": "React hooks",
+      "category": "react.js",
+      "description": "description 1"
+    },
+    {
+      "id": 2,
+      "title": "Redux in React.js",
+      "category": "react.js",
+      "description": "description 2"
+    },
+    {
+      "id": 3,
+      "title": "what is TailwindCSS?",
+      "category": "front-end",
+      "description": "description 3"
+    },
+    {
+      "id": 4,
+      "title": "what is Next.js",
+      "category": "front-end",
+      "description": "description 4"
+    },
+    {
+      "id": 5,
+      "title": "Different types of Database",
+      "category": "back-end",
+      "description": "description 5"
+    },
+    {
+      "id": 6,
+      "title": "what is node.js?",
+      "category": "node.js",
+      "description": "description 6"
+    }
   ]
 }
