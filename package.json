@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "server": "json-server db.json --p 4000 --watch"
   },
   "dependencies": {
     "axios": "^0.27.2",
