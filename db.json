@@ -56,5 +56,12 @@
       "category": "node.js",
       "description": "description 6"
     }
-  ]
+  ],
+  "profile": {
+    "name": "Saheb",
+    "email": "test@gmail.com",
+    "transactions": 20,
+    "balance": 1100,
+    "products": 5
+  }
 }
