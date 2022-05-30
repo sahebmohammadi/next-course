@@ -28,7 +28,7 @@ export default function Home() {
       .catch((err) => console.log(err));
   };
 
-  const addTodo = (e, todo) => {
+  const addTodo = (e, formData) => {
     e.preventDefault();
     axios
       .post(`/api/todos/`, { todo })
@@ -48,7 +48,7 @@ export default function Home() {
         <h1 className="font-bold">TodoList App using Next.js & TailwindCSS</h1>
       </nav>
       <div className="container p-2 xl:max-w-screen-xl mx-auto">
-        <section className="flex items-center justify-center">
+        <section className="flex md:flex-row md:items-start md:justify-center gap-x-8 flex-col gap-y-8">
           {/* todoForm */}
           <TodoForm onAdd={addTodo} />
           {/* TodoList */}
