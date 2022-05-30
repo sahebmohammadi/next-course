@@ -31,7 +31,7 @@ export default function Home() {
   const addTodo = (e, formData) => {
     e.preventDefault();
     axios
-      .post(`/api/todos/`, { todo })
+      .post(`/api/todos/`, { formData })
       .then(({ data }) => {
         console.log(data);
         setData(data.todos);
