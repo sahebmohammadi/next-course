@@ -18,11 +18,11 @@ export default function Home() {
   }, []);
 
   const deleteTodo = (id) => {
+    console.log({ id });
     axios
       .delete(`/api/todos/${id}`)
-      .then((res) => {
-        console.log(res.data);
-        setData(data.filter((t) => t.id !== parseInt(id)));
+      .then(({ data }) => {
+        setData(data.todos);
         setLoading(false);
       })
       .catch((err) => console.log(err));

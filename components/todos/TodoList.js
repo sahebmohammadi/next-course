@@ -1,6 +1,9 @@
 import { CheckIcon, PencilAltIcon, TrashIcon } from "@heroicons/react/outline";
 
 const TodoList = ({ data, onDelete }) => {
+  if (!data.length) {
+    return <h3 className="font-bold text-gray-600">todos has NOT yet been added !</h3>;
+  }
   return (
     <div className="w-full max-w-screen-md bg-white p-2 md:p-4 rounded-xl">
       {data.map((todo) => {
@@ -14,7 +17,7 @@ const TodoList = ({ data, onDelete }) => {
               <button className="">
                 <CheckIcon className="w-6 h-6 stroke-green-400" />
               </button>
-              <button onClick={() => onDelete(todo.id)}>
+              <button onClick={() => onDelete(todo._id)}>
                 <TrashIcon className="w-6 h-6 stroke-red-400" />
               </button>
               <button>
