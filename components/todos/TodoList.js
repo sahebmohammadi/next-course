@@ -10,7 +10,7 @@ const TodoList = ({ data, onDelete }) => {
       {data.map((todo) => {
         return (
           <div
-            key={todo.id}
+            key={todo._id}
             className="flex items-center justify-between border border-gray-100 mb-4 p-3 md:p-4 rounded-xl"
           >
             <Link href={`/todos/${todo._id}`}>

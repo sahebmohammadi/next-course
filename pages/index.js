@@ -2,23 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import TodoForm from "../components/todos/AddNewTodo";
 import TodoList from "../components/Todos/TodoList";
+import Todo from "../server/models/todo";
 
-export default function Home() {
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState(null); // [{},{}]
-
-  useEffect(() => {
-    axios
-      .get("/api/todos")
-      .then(({ data }) => {
-        setData(data.todos);
-        setLoading(false);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+export default function Home({ todos }) {
+  const [data, setData] = useState(todos); // [{},{}]
 
   const deleteTodo = (id) => {
-    console.log({ id });
     axios
       .delete(`/api/todos/${id}`)
       .then(({ data }) => {
@@ -33,14 +22,11 @@ export default function Home() {
     axios
       .post(`/api/todos/`, { formData })
       .then(({ data }) => {
-        console.log(data);
         setData(data.todos);
         setLoading(false);
       })
       .catch((err) => console.log(err));
   };
-
-  if (loading) return <div>loading ...</div>;
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -57,4 +43,13 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const todos = await Todo.find({});
+  return {
+    props: {
+      todos: JSON.parse(JSON.stringify(todos)),
+    },
+  };
 }
