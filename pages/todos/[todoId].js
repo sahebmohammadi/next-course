@@ -1,13 +1,20 @@
 import axios from "axios";
+import Layout from "../../containers/Layout";
 import { getOneTodo } from "../api/todos/[todoId]";
 
 const TodoPage = ({ todo }) => {
   return (
-    <div>
-      <h1>Todo detail page</h1>
-      <h2>title : {todo.title}</h2>
-      <p>description : {todo.description}</p>
-    </div>
+    <Layout>
+      <div className="">
+        <h1 className="text-xl font-bold mb-4">Todo Detail Page</h1>
+        <h2>
+          <strong className="font-bold">title</strong> : {todo.title}
+        </h2>
+        <p>
+          <strong className="font-bold">description</strong> : {todo.description}
+        </p>
+      </div>
+    </Layout>
   );
 };
 
