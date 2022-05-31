@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import Layout from "../../../containers/Layout";
-import { getOneTodo } from "../../api/todos/[todoId]";
+import Layout from "@/containers/Layout";
+import { getOneTodo } from "@/api/todos/[todoId]";
 
 const TodoPage = ({ todo }) => {
   const [checked, setChecked] = useState(todo.isCompleted);

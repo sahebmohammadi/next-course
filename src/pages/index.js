@@ -1,9 +1,9 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import TodoForm from "../components/todos/AddNewTodo";
-import TodoList from "../components/Todos/TodoList";
-import Layout from "../containers/Layout";
-import Todo from "../server/models/todo";
+import { useState } from "react";
+import TodoForm from "@/components/todos/AddNewTodo";
+import TodoList from "@/components/Todos/TodoList";
+import Layout from "@/containers/Layout";
+import Todo from "@/server/models/todo";
 
 export default function Home({ todos }) {
   const [data, setData] = useState(todos); // [{},{}]

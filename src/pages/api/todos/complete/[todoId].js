@@ -1,5 +1,5 @@
-import dbConnect from "../../../../server/utils/dbConnect";
-import Todo from "../../../../server/models/todo";
+import dbConnect from "@/server/utils/dbConnect";
+import Todo from "@/server/models/todo";
 
 dbConnect();
 

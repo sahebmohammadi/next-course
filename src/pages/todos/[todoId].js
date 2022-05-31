@@ -1,6 +1,5 @@
-import axios from "axios";
-import Layout from "../../containers/Layout";
-import { getOneTodo } from "../api/todos/[todoId]";
+import Layout from "@/containers/Layout";
+import { getOneTodo } from "@/api/todos/[todoId]";
 
 const TodoPage = ({ todo }) => {
   return (
