@@ -23,7 +23,15 @@ export default function Home({ todos }) {
       .post(`/api/todos/`, { formData })
       .then(({ data }) => {
         setData(data.todos);
-        setLoading(false);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const completeHandler = (id) => {
+    axios
+      .put(`/api/todos/complete/${id}`)
+      .then(({ data }) => {
+        setData(data.todos);
       })
       .catch((err) => console.log(err));
   };
@@ -38,7 +46,7 @@ export default function Home({ todos }) {
           {/* todoForm */}
           <TodoForm onAdd={addTodo} />
           {/* TodoList */}
-          <TodoList data={data} onDelete={deleteTodo} />
+          <TodoList data={data} onDelete={deleteTodo} onComplete={completeHandler} />
         </section>
       </div>
     </div>
