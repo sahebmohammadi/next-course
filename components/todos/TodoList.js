@@ -25,9 +25,11 @@ const TodoList = ({ data, onDelete }) => {
               <button onClick={() => onDelete(todo._id)}>
                 <TrashIcon className="w-6 h-6 stroke-red-400" />
               </button>
-              <button>
-                <PencilAltIcon className="w-6 h-6 stroke-blue-400" />
-              </button>
+              <Link href={`/todos/edit/${todo._id}`}>
+                <a className="block">
+                  <PencilAltIcon className="w-6 h-6 stroke-blue-400" />
+                </a>
+              </Link>
             </div>
           </div>
         );
