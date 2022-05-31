@@ -1,4 +1,5 @@
 import { CheckIcon, PencilAltIcon, TrashIcon } from "@heroicons/react/outline";
+import Link from "next/link";
 
 const TodoList = ({ data, onDelete }) => {
   if (!data.length) {
@@ -12,7 +13,11 @@ const TodoList = ({ data, onDelete }) => {
             key={todo.id}
             className="flex items-center justify-between border border-gray-100 mb-4 p-3 md:p-4 rounded-xl"
           >
-            <span>{todo.title}</span>
+            <Link href={`/todos/${todo._id}`}>
+              <a>
+                <span>{todo.title}</span>
+              </a>
+            </Link>
             <div className="flex gap-x-3 items-center">
               <button className="">
                 <CheckIcon className="w-6 h-6 stroke-green-400" />
