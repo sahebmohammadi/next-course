@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { signIn, signOut } from "next-auth/react";
 
 const Header = () => {
   return (
@@ -24,14 +25,10 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="#">
-              <a>Sign in</a>
-            </Link>
+            <button onClick={() => signIn("github")}>Sign in</button>
           </li>
           <li>
-            <Link href="#">
-              <a>Sign out</a>
-            </Link>
+            <button onClick={() => signOut()}>Sign Out </button>
           </li>
         </ul>
       </nav>
