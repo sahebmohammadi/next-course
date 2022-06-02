@@ -1,5 +1,6 @@
 import Layout from "@/containers/Layout";
 import { getOneTodo } from "@/api/todos/[todoId]";
+import dbConnect from "@/server/utils/dbConnect";
 
 const TodoPage = ({ todo }) => {
   return (
@@ -20,6 +21,7 @@ const TodoPage = ({ todo }) => {
 export default TodoPage;
 
 export async function getServerSideProps(context) {
+  dbConnect();
   const { query } = context;
   // get one todo from DB !
   const todo = await getOneTodo(query);
