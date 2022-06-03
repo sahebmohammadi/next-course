@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
+    "@next-auth/mongodb-adapter": "^1.0.3",
     "axios": "^0.27.2",
+    "mongodb": "^4.6.0",
     "mongoose": "^6.3.4",
     "next": "12.1.6",
     "next-auth": "^4.3.4",

@@ -8,7 +8,7 @@ const Profile = () => {
       signIn();
     },
   });
-
+  console.log(session);
   if (status === "loading") {
     return (
       <Layout>
